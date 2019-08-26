@@ -1,0 +1,73 @@
+#for i in range(1,10):
+#	for j in range(1,10):
+#		print('%d*%d=%d' %(i,j,i*j),end ='\t')
+#	print()
+
+
+"""
+Judge if the positive integrale is prime
+"""
+
+# from math import sqrt
+
+# num = int(input('Please insert a positive integrale: '))
+# end = int(sqrt(num))
+# is_prime = True
+# for x in range(2,end+1):
+	# if num % x == 0:
+		# is_prime = False
+		# break
+# if is_prime and num!=1:
+	# print('%d is prime' % num)
+# else:
+	# print('%d is not prime' %num)
+
+
+"""
+Insert two integrale to calculate the maximium common divisor and the minimium common multiple.
+
+Version: 0.1
+Autor: Dong
+Date: 2019-08-23
+"""
+
+# x = int(input('x = '))
+# y = int(input('y = '))
+# if x > y:
+    # x, y = y, x
+# for factor in range(x,0,-1):
+    # if x % factor == 0 and y % factor == 0:
+        # print('%d and %d Max_common_divisor is %d' % (x,y,factor))
+        # print('%d and %d Min_common_multiple is %d' % (x,y,x*y//factor))
+        # break
+
+
+"""
+To print some triangle picture
+
+Version:0.1
+Autor:Dong
+"""
+
+row = int(input('Please insert the row number: '))
+for i in range(row):
+    for j in range(i+1):
+        print('*',end='')
+    print()
+    
+    
+for i in range(row):
+    for j in range(row):
+        if j < (row -i -1):
+            print(' ', end='')
+        else:
+            print('*', end='')
+    print()
+    
+for i in range(row):
+    for j in range(row-i-1):
+        print(' ', end='')
+    for j in range(2*i+1):
+        print('*', end='')
+    print()
+    

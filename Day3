@@ -1,0 +1,135 @@
+"""
+User identity verification
+"""
+
+#username = input('Please insert username: ')
+#password = input('Please insert password: ')
+#can also using module 'getpass'
+#import getpass
+#username = getpass.getpass('Please insert username: ')
+#password = getpass.getpass('Please insert password: ')
+#if username == 'admin' and password == '123456':
+#	print('Identity verification succeed!')
+#else:
+#	print('Identity verification fail!!!')
+
+
+
+
+"""
+Unit conversation inch to centermeter
+"""
+
+#value = float(input('Please insert the length: '))
+#unit = input('Please insert the unit: ')
+#if unit == 'inch':
+#	print('%f inch = %f cm' %(value,value*2.54))
+#elif unit == 'cm':
+#	print('%f cm = %f inch' %(value,value/2.54))
+#else:
+#	print('Please insert the valid unit')
+
+
+
+"""
+Roll a dice to decide what to do
+"""
+
+#from random import randint
+
+#face = randint(1,6)
+#if face == 1:
+#	result = 'sing a song'
+#elif face == 2:
+#	result = 'dance'
+#elif face == 3:
+#	result = 'barking like a dog'
+#elif face == 4:
+#	result = 'Doing push-ups'
+#elif face == 5:
+#	result = 'Read a tongue twister'
+#else:
+#	result = 'Tell a cold joke'
+#print(result)
+
+
+
+
+"""
+Classification the grade base on the points
+"""
+
+#Points = float(input('Please insert the score: '))
+#if Points >= 90:
+#	grade = 'A'
+#elif Points >= 80:
+#	grade = 'B'
+#elif Points >= 70:
+#	grade = 'C'
+#elif Points >= 60:
+#	grade = 'D'
+#else:
+#	grade = 'E'
+
+#print('The referent grade is: ',grade)
+
+
+
+"""
+Input three lengths, determine if it is possible to create a triangle, if so calculate the perrimeter and the surface
+"""
+
+#import math
+
+#a = float(input('a = '))
+#b = float(input('b = '))
+#c = float(input('c = '))
+#if a + b > c and a + c > b and b + c > a:
+#	print ('The perrimeter is equal to:', (a+b+c))
+#	p = (a+b+c)/2
+#	area = math.sqrt(p*(p-a)*(p-b)*(p-c))
+#	print(' area is equal to: ',area)
+#else:
+#	print('Can not be a triangle')
+
+
+
+"""
+Personal tax calculation
+"""
+
+Salary = float(input(' Incoming salary in current month: '))
+insurance = float(input(' The insurance in current month: '))
+diff = Salary - insurance - 3500
+if diff <= 0:
+	rate = 0
+	deduction = 0
+elif diff < 1500:
+	rate =0.03
+	deduction =0
+elif diff < 4500:
+	rate = 0.1
+	deduction = 105
+elif diff < 9000:
+	rate = 0.2
+	deduction = 555
+elif diff < 35000:
+	rate = 0.25
+	deduction = 1005
+elif diff < 55000:
+	rate = 0.3
+	deduction = 2755
+elif diff < 80000:
+	rate =0.35
+	deduction =5505
+else:
+	rate =0.45
+	deduction = 13505
+tax = abs (diff*rate - deduction)
+print('The personal tax need to pay: %.2f rmb' %tax)
+print('Net salary: %.2f rmb' % (diff+3500-tax))
+
+
+
+
+	
