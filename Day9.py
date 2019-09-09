@@ -298,75 +298,170 @@ class Ultraman(Fighter):
         'hp: %d\n' % self._hp + \
         'mp: %d\n' % self._mp 
         
-class Monster(Fighter):
-    __slot__ = ('_name', '_hp')
+# class Monster(Fighter):
+    # __slot__ = ('_name', '_hp')
     
-    def attack(self, other):
-        other.hp -= randint(10, 20)
+    # def attack(self, other):
+        # other.hp -= randint(10, 20)
         
-    def __str__(self):
-        return '---%s monster---\n' % self._name +\
-            'hp: %d\n' % self._hp
+    # def __str__(self):
+        # return '---%s monster---\n' % self._name +\
+            # 'hp: %d\n' % self._hp
             
-def is_any_alive(monsters):
-    for monster in monsters:
-        if monster.alive > 0:
-            return True
-    return False
+# def is_any_alive(monsters):
+    # for monster in monsters:
+        # if monster.alive > 0:
+            # return True
+    # return False
         
-def select_alive_one(monsters):
-    monsters_len = len(monsters)
-    while True:
-        index = randrange(monsters_len)
-        monster = monsters[index]
-        if monster.alive > 0:
-            return monster
+# def select_alive_one(monsters):
+    # monsters_len = len(monsters)
+    # while True:
+        # index = randrange(monsters_len)
+        # monster = monsters[index]
+        # if monster.alive > 0:
+            # return monster
                 
-def display_info(ultraman, monsters):
-    print(ultraman)
-    for monster in monsters:
-        print(monster, end='')
+# def display_info(ultraman, monsters):
+    # print(ultraman)
+    # for monster in monsters:
+        # print(monster, end='')
             
-def main():
-    u = Ultraman('Dong', 1000, 120)
-    m1 = Monster('Direnjie', 250)
-    m2 = Monster('Baiyuanfang', 500)
-    m3 = Monster('Wangdachui', 700)
-    ms = [m1, m2, m3]
-    fight_round = 1
-    while u.alive and is_any_alive(ms):
-        print('========il %02d turn=====' % fight_round)
-        m = select_alive_one(ms)
-        skill =  randint(1, 10)
-        if skill <= 6:
-            print('%s is using normal attack to %s.' % (u.name, m.name))
-            u.attack(m)
-            print('%s resume %d mp' %(u.name, u.resume()))
-        elif skill <=9:
-            if u.magic_attack(ms):
-                print('%s is using magic attack.' % u.name)
-            else:
-                 print('%s is failed to use magic attack.' % u.name)
-        else:
-            if u.huge_attack(m):
-                print('%s is using huge attack to %s.' % (u.name, m.name))
-            else:
-                print('%s is using normal attack to %s.' % (u.name, m.name))
-                print('%s magic resume %d points.' % (u.name, u.resume()))
-        if m.alive > 0:
-            print('%s fight back to %s.' %(m.name, u.name))
-            m.attack(u)
-        display_info(u, ms)
-        fight_round +=1
-    print('\n========flight is over======')
-    if u.alive > 0:
-        print('%s ultraman wins!' % u.name)
-    else:
-        print('monster wins!')
+# def main():
+    # u = Ultraman('Dong', 1000, 120)
+    # m1 = Monster('Direnjie', 250)
+    # m2 = Monster('Baiyuanfang', 500)
+    # m3 = Monster('Wangdachui', 700)
+    # ms = [m1, m2, m3]
+    # fight_round = 1
+    # while u.alive and is_any_alive(ms):
+        # print('========il %02d turn=====' % fight_round)
+        # m = select_alive_one(ms)
+        # skill =  randint(1, 10)
+        # if skill <= 6:
+            # print('%s is using normal attack to %s.' % (u.name, m.name))
+            # u.attack(m)
+            # print('%s resume %d mp' %(u.name, u.resume()))
+        # elif skill <=9:
+            # if u.magic_attack(ms):
+                # print('%s is using magic attack.' % u.name)
+            # else:
+                 # print('%s is failed to use magic attack.' % u.name)
+        # else:
+            # if u.huge_attack(m):
+                # print('%s is using huge attack to %s.' % (u.name, m.name))
+            # else:
+                # print('%s is using normal attack to %s.' % (u.name, m.name))
+                # print('%s magic resume %d points.' % (u.name, u.resume()))
+        # if m.alive > 0:
+            # print('%s fight back to %s.' %(m.name, u.name))
+            # m.attack(u)
+        # display_info(u, ms)
+        # fight_round +=1
+    # print('\n========flight is over======')
+    # if u.alive > 0:
+        # print('%s ultraman wins!' % u.name)
+    # else:
+        # print('monster wins!')
  
 
-if  __name__ == '__main__':
-    main()
+# if  __name__ == '__main__':
+    # main()
+    
+    
+# import random
+
+# class Card(object):
+    # def __init__(self, suite, face):
+        # self._suite = suite
+        # self._face = face
+        
+    # @property
+    # def face(self):
+        # return self._face
+        
+    # @property
+    # def suite(self):
+        # return self._suite
+    
+    # def __str__ (self):
+        # if self._face == 1:
+            # face_str = 'A'
+        # elif self._face == 11:
+            # face_str = 'J'
+        # elif self._face == 12:
+            # face_str = 'Q'
+        # elif self._face == 13:
+            # face_str = 'K'
+        # else:
+            # face_str = str(self._face)
+        # return '%s%s' % (self._suite, face_str)
+        
+    # def __repr__(self):
+        # return self.__str__()
+        
+# class Poker(object):
+    # def __init__(self):
+        # self._cards = [Card(suite, face)
+                        # for suite in '♠♥♣♦'
+                        # for face in range(1,14)]
+        # self._current = 0
+        
+    # @property
+    # def cards(self):
+        # return self._cards
+        
+    # def shuffle(self):
+        # self._current = 0
+        # self._current < len(self._cards)
+        
+    # @property
+    # def next(self):
+        # card = self._cards[self._current]
+        # self._current += 1
+        # return card
+        
+    # @property
+    # def has_next(self):
+        # return self._current < len(self._cards)
+        
+# class Player(object):
+    # def __init__(self, name):
+        # self._name = name
+        # self._cards_on_hand = []
+        
+    # @property
+    # def name(self):
+        # return self._name
+        
+    # @property
+    # def cards_on_hand(self):
+        # return self._cards_on_hand
+    
+    # def get(self, card):
+        # self._cards_on_hand.append(card)
+       
+    # def arrange(self, card_key):
+        # self._cards_on_hand.sort(key = card_key)
+        
+
+# def get_key(card):
+    # return(card.suite, card.face)
+    
+# def main():
+    # p = Poker()
+    # p.shuffle()
+    # players = [Player('Dong'), Player('Xi'), Player('Nan'), Player('Bei')]
+    # for _ in range(13):
+        # for player in players:
+            # player.get(p.next)
+    # for player in players:
+        # print(player.name + ':', end= ' ')
+        # player.arrange(get_key)
+        # print(player.cards_on_hand)
+        
+# if __name__ == '__main__':
+    # main()
     
     
     
